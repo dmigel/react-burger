@@ -1,11 +1,33 @@
+import { Preloader } from '@krgaa/react-developer-burger-ui-components';
+import { useEffect, useState } from 'react';
+
 import { AppHeader } from '@components/app-header/app-header';
 import { BurgerConstructor } from '@components/burger-constructor/burger-constructor';
 import { BurgerIngredients } from '@components/burger-ingredients/burger-ingredients';
-import { ingredients } from '@utils/ingredients';
+import { getIngredients } from '@utils/api.js';
 
 import styles from './app.module.css';
 
 export const App = () => {
+  const [ingredients, setIngredients] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    getIngredients()
+      .then((data) => setIngredients(data))
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading)
+    return (
+      <div className={styles.preloader}>
+        <Preloader />
+      </div>
+    );
+  if (error) return 'Error: ' + error;
+
   return (
     <div className={styles.app}>
       <AppHeader />
