@@ -1,0 +1,36 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background-color: rgb(0 0 0 / 60%);
+}
+
+.modalWindow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 720px;
+  background-color: #1c1c21;
+  border: 1px solid rgb(76 76 255 / 20%);
+  border-radius: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.modalTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalTitle svg {
+  cursor: pointer;
+}
+
+.closeModal {
+  position: absolute;
+  top: 60px;
+  right: 40px;
+  display: inline-block;
+  height: 24px;
+  cursor: pointer;
+}

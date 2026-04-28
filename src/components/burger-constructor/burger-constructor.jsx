@@ -5,9 +5,14 @@ import {
   DragIcon,
 } from '@krgaa/react-developer-burger-ui-components';
 
+import Order from '@components/order/order.jsx';
+import { useModal } from '@hooks/useModal.jsx';
+
 import styles from './burger-constructor.module.css';
 
 export const BurgerConstructor = ({ ingredients }) => {
+  const { openModal, Modal } = useModal();
+
   return (
     <section className={`${styles.burger_constructor} pl-4 pr-4`}>
       <div className={`${styles.burger_buns}`}>
@@ -47,9 +52,13 @@ export const BurgerConstructor = ({ ingredients }) => {
           <p className={'text text_type_digits-medium'}>610</p>
           <CurrencyIcon type={'primary'} />
         </div>
-        <Button type={'primary'} size={'large'}>
+        <Button type={'primary'} onClick={openModal} size={'large'}>
           Оформить заказ
         </Button>
+
+        <Modal>
+          <Order />
+        </Modal>
       </div>
     </section>
   );
