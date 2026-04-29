@@ -3,14 +3,9 @@ import { useCallback } from 'react';
 
 import styles from './ingredients-group.module.css';
 
-const IngredientsGroup = ({
-  title,
-  ingredients,
-  showIngredient,
-  setOpenedIngredient,
-}) => {
+const IngredientsGroup = ({ title, ingredients, showIngredient, setIngredient }) => {
   const openIngredient = useCallback((ingredient) => {
-    setOpenedIngredient(ingredient);
+    setIngredient(ingredient);
     showIngredient();
   }, []);
 

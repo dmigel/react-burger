@@ -1,17 +1,17 @@
 import { Tab } from '@krgaa/react-developer-burger-ui-components';
 import { useCallback, useMemo, useState } from 'react';
 
+import IngredientDetails from '@components/ingredient-details/ingredient-details.jsx';
 import IngredientsGroup from '@components/ingredients-group/ingredients-group.jsx';
-import OpenedIngredient from '@components/opened-ingredient/opened-ingredient.jsx';
 import { useModal } from '@hooks/useModal.jsx';
 
 import styles from './burger-ingredients.module.css';
 
 export const BurgerIngredients = ({ ingredients }) => {
   const { openModal, closeModal, Modal } = useModal();
-  const [openedIngredient, setOpenedIngredient] = useState(null);
+  const [ingredient, setIngredient] = useState(null);
   const handleCloseIngredientModal = useCallback(() => {
-    setOpenedIngredient(null);
+    setIngredient(null);
     closeModal();
   }, [closeModal]);
   const buns = useMemo(() => {
@@ -67,31 +67,24 @@ export const BurgerIngredients = ({ ingredients }) => {
             showIngredient={openModal}
             title={'Булки'}
             ingredients={buns}
-            setOpenedIngredient={setOpenedIngredient}
+            setIngredient={setIngredient}
           />
           <IngredientsGroup
             showIngredient={openModal}
             title={'Начинки'}
             ingredients={fillings}
-            setOpenedIngredient={setOpenedIngredient}
+            setIngredient={setIngredient}
           />
           <IngredientsGroup
             showIngredient={openModal}
             title={'Соусы'}
             ingredients={sauces}
-            setOpenedIngredient={setOpenedIngredient}
+            setIngredient={setIngredient}
           />
         </div>
       </section>
       <Modal title="Детали ингредиента" onClose={handleCloseIngredientModal}>
-        <OpenedIngredient
-          image={openedIngredient?.image_large}
-          title={openedIngredient?.name}
-          fat={openedIngredient?.fat}
-          calories={openedIngredient?.calories}
-          proteins={openedIngredient?.proteins}
-          carbohydrates={openedIngredient?.carbohydrates}
-        />
+        <IngredientDetails ingredient={ingredient} />
       </Modal>
     </>
   );

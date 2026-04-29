@@ -1,8 +1,8 @@
 import { DoneOrderIcon } from '../assets/images/images.jsx';
 
-import styles from './order.module.css';
+import styles from './order-details.module.css';
 
-const Order = () => {
+const OrderDetails = () => {
   return (
     <div className={`${styles.order}`}>
       <p className={`text text_type_digits-large mb-8 ${styles.orderNumber}`}>034536</p>
@@ -20,4 +20,4 @@ const Order = () => {
   );
 };
 
-export default Order;
+export default OrderDetails;

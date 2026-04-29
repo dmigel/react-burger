@@ -5,7 +5,7 @@ import {
   DragIcon,
 } from '@krgaa/react-developer-burger-ui-components';
 
-import Order from '@components/order/order.jsx';
+import OrderDetails from '@components/order-details/order-details.jsx';
 import { useModal } from '@hooks/useModal.jsx';
 
 import styles from './burger-constructor.module.css';
@@ -57,7 +57,7 @@ export const BurgerConstructor = ({ ingredients }) => {
         </Button>
 
         <Modal>
-          <Order />
+          <OrderDetails />
         </Modal>
       </div>
     </section>

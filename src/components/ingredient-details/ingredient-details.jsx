@@ -1,17 +1,17 @@
-import styles from './opened-ingredient.module.css';
+import styles from './ingredient-details.module.css';
 
-const OpenedIngredient = ({ image, title, fat, calories, proteins, carbohydrates }) => {
+const IngredientDetails = ({ ingredient }) => {
   return (
     <div className={styles.openedIngredient}>
-      <img className="mb-4" src={image} alt={title} />
-      <p className="text text_type_main-medium mb-8">{title}</p>
+      <img className="mb-4" src={ingredient.image_large} alt={ingredient.name} />
+      <p className="text text_type_main-medium mb-8">{ingredient.name}</p>
       <ul className={styles.ingredietnStat}>
         <li className={styles.ingredietnStat_item}>
           <span className="text text_type_main-default text_color_inactive">
             Калории, ккал
           </span>
           <span className="text text_type_digits-default text_color_inactive">
-            {calories}
+            {ingredient.calories}
           </span>
         </li>
         <li className={styles.ingredietnStat_item}>
@@ -19,7 +19,7 @@ const OpenedIngredient = ({ image, title, fat, calories, proteins, carbohydrates
             Белки, г
           </span>
           <span className="text text_type_digits-default text_color_inactive">
-            {proteins}
+            {ingredient.proteins}
           </span>
         </li>
         <li className={styles.ingredietnStat_item}>
@@ -27,7 +27,7 @@ const OpenedIngredient = ({ image, title, fat, calories, proteins, carbohydrates
             Жиры, г
           </span>
           <span className="text text_type_digits-default text_color_inactive">
-            {fat}
+            {ingredient.fat}
           </span>
         </li>
         <li className={styles.ingredietnStat_item}>
@@ -35,7 +35,7 @@ const OpenedIngredient = ({ image, title, fat, calories, proteins, carbohydrates
             Углеводы, г
           </span>
           <span className="text text_type_digits-default text_color_inactive">
-            {carbohydrates}
+            {ingredient.carbohydrates}
           </span>
         </li>
       </ul>
@@ -43,4 +43,4 @@ const OpenedIngredient = ({ image, title, fat, calories, proteins, carbohydrates
   );
 };
 
-export default OpenedIngredient;
+export default IngredientDetails;
