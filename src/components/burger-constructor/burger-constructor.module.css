@@ -1,7 +1,46 @@
 .burger_constructor {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
   width: 600px;
-  padding-bottom: 20px;
+  padding-bottom: 60px;
+  overflow-y: auto;
   color: var(--text-primary-color);
+}
+
+.ingredients_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100px;
+  overflow-y: auto;
+}
+
+.ingredients_list_item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.burger_buns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.burger_order {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.burger_price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.burger_price svg {
+  width: 32px;
+  height: 32px;
 }

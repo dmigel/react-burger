@@ -5,7 +5,7 @@
 .menu {
   display: flex;
   align-items: center;
-  max-width: 1240px;
+  max-width: 1280px;
   height: 56px;
   margin: 0 auto;
 }
@@ -15,8 +15,17 @@
   flex-basis: 35%;
 }
 
+.menu_part_right {
+  display: flex;
+  flex-basis: 35%;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
 .link {
   display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--text-inactive-color);
   text-decoration: none;
 }
