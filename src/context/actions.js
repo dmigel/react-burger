@@ -1,0 +1,8 @@
+export const GET_INGREDIENTS = 'GET_INGREDIENTS';
+export const LOADING_START = 'LOADING_START';
+export const LOADING_ERROR = 'LOADING_ERROR';
+export const LOADING_FINISH = 'LOADING_FINISH';
+export const SET_BURGER_PRICE = 'SET_BURGER_PRICE';
+export const MAKE_ORDER = 'MAKE_ORDER';
+export const ADD_INGREDIENT = 'ADD_INGREDIENT';
+export const ADD_BUN = 'ADD_BUN';

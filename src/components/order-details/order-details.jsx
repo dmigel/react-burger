@@ -2,10 +2,12 @@ import { DoneOrderIcon } from '../assets/images/images.jsx';
 
 import styles from './order-details.module.css';
 
-const OrderDetails = () => {
+const OrderDetails = ({ orderNumber }) => {
   return (
     <div className={`${styles.order}`}>
-      <p className={`text text_type_digits-large mb-8 ${styles.orderNumber}`}>034536</p>
+      <p className={`text text_type_digits-large mb-8 ${styles.orderNumber}`}>
+        {orderNumber}
+      </p>
       <p className="text text_type_main-medium pb-15">идентификатор заказа</p>
       <div className="mb-15">
         <DoneOrderIcon />

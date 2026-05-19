@@ -81,7 +81,7 @@ export default defineConfig([
             '^/',
             '@/',
             '^@components/',
-            '^@contexts/',
+            '^@context/',
             '^@hocs/',
             '^@hooks/',
             '^@pages/',
