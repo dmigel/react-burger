@@ -1,22 +1,22 @@
 import { Tab } from '@krgaa/react-developer-burger-ui-components';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useContext, useMemo, useState } from 'react';
 
+import IngredientsContext from '@/context/ingredients-context.js';
 import IngredientDetails from '@components/ingredient-details/ingredient-details.jsx';
 import IngredientsGroup from '@components/ingredients-group/ingredients-group.jsx';
 import { useModal } from '@hooks/useModal.jsx';
 
 import styles from './burger-ingredients.module.css';
 
-export const BurgerIngredients = ({ ingredients }) => {
+export const BurgerIngredients = () => {
+  const { state } = useContext(IngredientsContext);
+  const { ingredients, buns } = state;
   const { openModal, closeModal, Modal } = useModal();
   const [ingredient, setIngredient] = useState(null);
   const handleCloseIngredientModal = useCallback(() => {
     setIngredient(null);
     closeModal();
   }, [closeModal]);
-  const buns = useMemo(() => {
-    return ingredients.filter((item) => item.type === 'bun');
-  }, [ingredients]);
 
   const fillings = useMemo(
     () => ingredients.filter((item) => item.type === 'main'),
